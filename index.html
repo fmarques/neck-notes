@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeckNotes</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Poppins:400' rel='stylesheet'>
+</head>
+<body>
+  <div class="app">
+    <div class="controls">
+      <div class="control">
+        <label>Instrument</label>
+        <select onchange="handleInstrumentSelect(this)">
+          <option selected value="guitar">Guitar</option>
+          <option value="bass">Bass</option>
+        </select>
+      </div>
+      <div class="control">
+        <label>Tunning</label>
+        <select onchange="handleTunningSelect(this)">
+          <option selected value="e-standard">E Standard</option>
+          <option value="drop-d">Drop D</option>
+          <option value="eb-standard">Eb Standard</option>
+          <option value="d-standard">D Standard</option>
+          <option value="drop-c">Drop C</option>
+          <option value="c-standard">C Standard</option>
+          <option value="drop-b">Drop B</option>
+          <option value="b-standard">B Standard</option>
+          <option value="drop-a">Drop A</option>
+          <option value="a-standard">A Standard</option>
+        </select>
+      </div>
+      <div class="control">
+        <label>Frets</label>
+        <select onchange="handleFretSelect(this)">
+          <option value="23">23</option>
+          <option selected value="22">22</option>
+          <option value="21">21</option>
+          <option value="20">20</option>
+          <option value="18">18</option>
+          <option value="12">12</option>
+        </select>
+      </div>
+      <div class="control">
+        <label for="natural">Natural</label>
+        <input type="checkbox" id="natural" checked onchange="handleNaturalSelect(this)">
+      </div>
+      <div class="control">
+        <label for="flat">Flat</label>
+        <input type="checkbox" id="flat" onchange="handleFlatSelect(this)">
+      </div>
+      <div class="control">
+        <label for="sharp">Sharp</label>
+        <input type="checkbox" id="sharp" onchange="handleSharpSelect(this)">
+      </div>
+      <div class="control">
+        <label for="sharp">Flip Horizontal</label>
+        <input type="checkbox" id="flipH" onchange="handleFlipHorizontal(this)">
+      </div>
+      <div class="control">
+        <label for="sharp">Flip Vertical</label>
+        <input type="checkbox" id="flipV" onchange="handleFlipVertical(this)">
+      </div>
+    </div>
+    <div id="neck" class="natural guitar fret22"></div>
+  </div>
+  <script> document.documentElement.style.setProperty('--column-width', Math.min(window.innerWidth, 800)+'px'); </script>
+  <script src="app.js"></script>
+  <script>
+    getNotes()
+    getTunning('e-standard')
+  </script>
+</body>
+</html>

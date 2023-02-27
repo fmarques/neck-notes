@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+.app {
+  overflow: auto;
+  padding: 0 20px;
+}
+.controls {
+  display: flex;
+  justify-content: center;
+  min-width: 768px;
+}
+.control {
+  display: flex;
+  flex-flow: column;
+  margin: 0 6px;
+}
+#neck {
+  margin-top: 4vh;
+  width: 90vw;
+  min-width: 768px;
+  border-right: solid 2px #493B2A;
+  border-left: solid 2px #493B2A;
+}
+.fretboard {
+  display: flex;
+  flex-direction: column;
+}
+.flip-v .fretboard {
+  flex-direction: column-reverse;
+}
+.fret-numbers {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.string {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.flip-h .string,
+.flip-h .fret-numbers {
+  flex-direction: row;
+}
+.string:before {
+  display: block;
+  content: '';
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #8499B1;
+}
+
+.string:nth-child(1):before {
+  height: 6px;
+}
+.string:nth-child(2):before {
+  height: 5px;
+}
+.string:nth-child(3):before {
+  height: 4px;
+}
+.string:nth-child(4):before {
+  height: 3px;
+}
+.string:nth-child(5):before {
+  height: 2px;
+}
+.string:nth-child(6):before {
+  height: 1px;
+}
+
+.bass .string:nth-child(6),
+.bass .string:nth-child(5) {
+  display: none;
+}
+
+.fret {
+  position: relative;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  border-left: solid 1px #493B2A;
+  padding: 2px 0;
+}
+
+.fret22 .fret {
+  font-size: 1.75vw;
+  width: calc(100% / 22);
+}
+.fret21 .fret {
+  width: calc(100% / 21);
+}
+.fret20 .fret {
+  width: calc(100% / 20);
+}
+.fret18 .fret {
+  width: calc(100% / 18);
+}
+.fret12 .fret {
+  font-size: 2.75vw;
+  width: calc(100% / 12);
+}
+.fret12 .fret:nth-child(n+14),
+.fret18 .fret:nth-child(n+20),
+.fret20 .fret:nth-child(n+22),
+.fret21 .fret:nth-child(n+23),
+.fret22 .fret:nth-child(n+24) {
+  display: none;
+}
+
+.fret > span {
+  position: relative;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 0;
+  padding-bottom: 80%;
+  color: #FDFFFF;
+  border-radius: 50%;
+}
+.wrap-natural {
+  background-color: #570000;
+}
+.wrap-flat,
+.wrap-sharp {
+  background-color: #B10F2E;
+}
+
+.fret > span span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fret span.natural,
+.fret span.flat,
+.fret span.sharp {
+  display: none;
+}
+.flat .fret span.flat,
+.natural .fret span.natural,
+.sharp .fret span.sharp {
+  display: block;
+}
+#neck.flat.sharp .fret span.flat,
+#neck.flat.sharp .fret span.sharp {
+  font-size: 70%;
+}
+#neck.flat.sharp .fret span.sharp {
+  top: 32%;
+}
+#neck.flat.sharp .fret span.flat {
+  top: 68%;
+}
+
+@media (max-width: 1023.98px) {
+  .fret12 .fret {
+    font-size: 2vw;
+  }
+}

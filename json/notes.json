@@ -1,0 +1,80 @@
+[
+  [{
+    "note": "A",
+    "type": "natural"
+  }],
+  [
+    {
+      "note": "A#",
+      "type": "sharp"
+    },
+    {
+      "note": "Bb",
+      "type": "flat"
+    }
+  ],
+  [{
+    "note": "B",
+    "type": "natural"
+  }],
+  [{
+    "note": "C",
+    "type": "natural"
+  }],
+  [
+    {
+      "note": "C#",
+      "type": "sharp"
+    },
+    {
+      "note": "Db",
+      "type": "flat"
+    }
+  ],
+  [{
+    "note": "D",
+    "type": "natural"
+  }],
+  [
+    {
+      "note": "D#",
+      "type": "sharp"
+    },
+    {
+      "note": "Eb",
+      "type": "flat"
+    }
+  ],
+  [{
+    "note": "E",
+    "type": "natural"
+  }],
+  [{
+    "note": "F",
+    "type": "natural"
+  }],
+  [
+    {
+      "note": "F#",
+      "type": "sharp"
+    },
+    {
+      "note": "Gb",
+      "type": "flat"
+    }
+  ],
+  [{
+    "note": "G",
+    "type": "natural"
+  }],
+  [
+    {
+      "note": "G#",
+      "type": "sharp"
+    },
+    {
+      "note": "Ab",
+      "type": "flat"
+    }
+  ]
+]
